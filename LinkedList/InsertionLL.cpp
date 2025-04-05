@@ -103,7 +103,7 @@ Node* insertBeforeValue(Node* head, int ele, int val){
     }
     Node* temp = head;
     Node* prev = NULL;
-
+// 12->3->4->5
     while(temp != NULL){
         if(temp->data == ele){
             Node* newNode = new Node(val,temp);

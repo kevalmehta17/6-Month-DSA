@@ -75,7 +75,6 @@ Node* removeTail(Node* head){
     return head;
 }
 
-
 Node* removeAtK(Node* head, int k){
     if(head == NULL) return NULL;
 
