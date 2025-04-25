@@ -1,5 +1,7 @@
 // Queue using Array
 
+// time & space complexity with Array implementation
+// time complexity of all operations is O(1) and space complexity is O(n) where n is the size of the array.
 #include<iostream>
 using namespace std;
 
@@ -83,5 +85,4 @@ int main(){
     q.peek(); // Output: Front element: 20
     q.size(); // Output: Size of Queue: 2
     q.isEmpty(); // Output: Queue is not Empty
-
 }

@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 
+// Time and space complexity for arr operation is:-
+// Time complexity of all operations is O(1) and space complexity is O(n) where n is the size of the array.
+
 class Stack{
     int stack[10];
     int top;
