@@ -40,35 +40,35 @@ class Solution {
 // 4. Return the head node
 // Time Complexity: O(2n) = O(n) => O(len N) + O(len - N) 
 // Space Complexity: O(1)
-// class Solution {
-//     public:
-//         ListNode* removeNthFromEnd(ListNode* head, int n) {
-//             if(!head) return head;
-//             int cnt = 0;
-//             ListNode* temp = head;
+class Solution {
+    public:
+        ListNode* removeNthFromEnd(ListNode* head, int n) {
+            if(!head) return head;
+            int cnt = 0;
+            ListNode* temp = head;
     
-//             while(temp){
-//                 cnt++;
-//                 temp = temp->next;
-//             }
-//             // If N is on head
-//             if(cnt == n){
-//                 ListNode* deletehead = head;
-//                 head = head->next;
-//                 delete deletehead;
-//                 return head;
-//             }
-//             int result = cnt - n;
-//             temp = head;
-//             while(temp){
-//                 result--;
-//                 if(result == 0) break;
-//                 temp = temp->next;
-//             }
-//             ListNode* deletetemp = temp->next;
-//             temp->next = temp->next->next;
-//             delete deletetemp;
-//             return head;
+            while(temp){
+                cnt++;
+                temp = temp->next;
+            }
+            // If N is on head
+            if(cnt == n){
+                ListNode* deletehead = head;
+                head = head->next;
+                delete deletehead;
+                return head;
+            }
+            int result = cnt - n;
+            temp = head;
+            while(temp){
+                result--;
+                if(result == 0) break;
+                temp = temp->next;
+            }
+                ListNode* deletetemp = temp->next;
+                temp->next = temp->next->next;
+                delete deletetemp;
+            return head;
     
-//         }
-//     };
+        }
+    };

@@ -61,7 +61,8 @@ Node* removeHeadDLL(Node* head){
     return head;
 }  
 // Remove tail in DLL
- // 12 <-> 3 <-> 5 <-> 7 <-> 4
+ // 12 <-> 3 <-> 5 <-> 7 <-> 4 
+//  here value of k is 4
 Node* removeTailDLL(Node* head){
     if(!head || head->next == NULL) return nullptr;
     
@@ -79,6 +80,7 @@ Node* removeTailDLL(Node* head){
 
 // Remove kth in DLL
  // 12 <-> 3 <-> 5 <-> 7 <-> 4
+ //K = 2
  Node* removeKDLL(Node* head, int k) {
     if (!head) return nullptr;
 

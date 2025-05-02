@@ -44,7 +44,8 @@ Node* insertHead(Node* head, int val){
     Node* temp = new Node(val,head);
     return temp;
 }
-
+// Input :- 12->3->4->5->7
+// Output :- 12->3->4->5->7->20
 Node* insertTail(Node* head, int val){
     if(head == NULL){
         return new Node(val,head);
@@ -54,7 +55,7 @@ Node* insertTail(Node* head, int val){
         temp = temp->next;
     }
     if(temp->next == NULL){
-        Node* newNode = new Node(val);
+        Node* newNode = new Node(val,nullptr);
         temp->next = newNode;
     }
     return head;
@@ -107,6 +108,8 @@ Node* insertBeforeValue(Node* head, int ele, int val){
     while(temp != NULL){
         if(temp->data == ele){
             Node* newNode = new Node(val,temp);
+            // Edge case:- if(prev) bcz if prev is null then we are at the head
+            // and we need to insert at the head
             if (prev) prev->next = newNode;
             return head;
             // newNode->next = temp;
@@ -116,6 +119,25 @@ Node* insertBeforeValue(Node* head, int ele, int val){
     }
     return head;
 }
+
+Node* insertBeforeVal(Node* head, int ele, int val) {
+    if (head == NULL) return NULL;
+    // If the head node itself is the target element
+    if (head->data == ele) {
+        return new Node(val, head);
+    }
+    Node* temp = head;
+    while (temp->next != NULL) {
+        if (temp->next->data == ele) {
+            Node* newNode = new Node(val, temp->next);
+            temp->next = newNode;
+            return head;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
 
 int main(){
     vector<int> arr = {12,3,5,8,9};
